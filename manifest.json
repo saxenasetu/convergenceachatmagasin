@@ -1,0 +1,248 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "com.eramet.Convergence_Achat_Magasin",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "MM_IM_PHYS_INV_DOC_SRV": {
+                "uri": "/sap/opu/odata/sap/MM_IM_PHYS_INV_DOC_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/MM_IM_PHYS_INV_DOC_SRV/metadata.xml"
+                }
+            },
+            "ZI_INV_ARTICLEDETAIL_CDS": {
+                "uri": "/sap/opu/odata/sap/ZI_INV_ARTICLEDETAIL_CDS/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZI_INV_ARTICLEDETAIL_CDS/metadata.xml"
+                }
+            },
+            "API_PHYSICAL_INVENTORY_DOC_SRV": {
+                "uri": "/sap/opu/odata/sap/API_PHYSICAL_INVENTORY_DOC_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/API_PHYSICAL_INVENTORY_DOC_SRV/metadata.xml"
+                }
+            },
+            "EAM_OBJPG_PURCHORDER_SRV": {
+                "uri": "/sap/opu/odata/sap/EAM_OBJPG_PURCHORDER_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/EAM_OBJPG_PURCHORDER_SRV/metadata.xml"
+                }
+            },
+            "API_PURCHASEORDER_PROCESS_SRV": {
+                "uri": "/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/API_PURCHASEORDER_PROCESS_SRV/metadata.xml"
+                }
+            },
+            "API_OUTBOUND_DELIVERY_SRV": {
+                "uri": "/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=2/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/API_OUTBOUND_DELIVERY_SRV/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "com.eramet.Convergence_Achat_Magasin.view.Home",
+            "type": "XML",
+            "async": true,
+            "id": "Home"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.eramet.Convergence_Achat_Magasin.i18n.i18n"
+                }
+            },
+            "inventoryModel": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "MM_IM_PHYS_INV_DOC_SRV",
+                "preload": true
+            },
+            "InventoryDetail": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZI_INV_ARTICLEDETAIL_CDS",
+                "preload": true
+            },
+            "inventoryAPI": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "API_PHYSICAL_INVENTORY_DOC_SRV",
+                "preload": true
+            },
+            "PurchaseOrder": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "EAM_OBJPG_PURCHORDER_SRV",
+                "preload": true
+            },
+            "PurchaseOrderList": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "API_PURCHASEORDER_PROCESS_SRV",
+                "preload": true
+            },
+            "OutboundDeliveryV2": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "API_OUTBOUND_DELIVERY_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.eramet.Convergence_Achat_Magasin.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Home",
+                    "target": "Home"
+                },
+                {
+                    "pattern": "Inventaire",
+                    "name": "Inventaire",
+                    "target": "Inventaire"
+                },
+                {
+                    "pattern": "ListeServir",
+                    "name": "ListeServir",
+                    "target": "ListeServir"
+                },
+                {
+                    "pattern": "ScanBl",
+                    "name": "ScanBl",
+                    "target": "ScanBl"
+                },
+                {
+                    "pattern": "DetailsDoc",
+                    "name": "DetailsDoc",
+                    "target": "DetailsDoc"
+                },
+                {
+                    "pattern": "Liste",
+                    "name": "Liste",
+                    "target": "Liste"
+                },
+                {
+                    "pattern": "RechercheArticle",
+                    "name": "RechercheArticle",
+                    "target": "RechercheArticle"
+                }
+            ],
+            "targets": {
+                "Home": {
+                    "viewName": "Home"
+                },
+                "Inventaire": {
+                    "viewName": "Inventaire/Inventaire"
+                },
+                "ListeServir": {
+                    "viewName": "ListeServir/ListeServir"
+                },
+                "ScanBl": {
+                    "viewName": "ScanBl/ScanBl"
+                },
+                "DetailsDoc": {
+                    "viewName": "Inventaire/DetailsDoc"
+                },
+                "Liste": {
+                    "viewName": "ListeServir/Liste"
+                },
+                "RechercheArticle": {
+                    "viewName": "RechercheArticle/RechercheArticle"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    }
+}

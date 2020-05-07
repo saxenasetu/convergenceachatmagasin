@@ -1,0 +1,96 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" 
+	controllerName="com.eramet.Convergence_Achat_Magasin.controller.ScanBl.ScanBl" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://home" press="backToHome"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="{i18n>scanBlTitle}" />
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>scanBlText1}"></Label>
+							<Input 
+							id="scanInput" 
+							showValueHelp="true" 
+							valueHelpRequest="onPressBarcode"
+							showSuggestion="true"
+							submit="onSubmit"
+							suggest="onSuggest"
+							suggestionItemSelected="onReturnSupplier"
+							suggestionItems="{ path: 'purchaseModel>/'}">
+								<suggestionItems>
+									<core:Item 
+										text="{path: 'purchaseModel>PurchaseOrder'}"
+										key="{path: 'purchaseModel>PurchaseOrder'}"/>
+								</suggestionItems>
+							</Input>
+							
+							<Label text="{i18n>scanBlText2}"></Label>
+							<Input id="fournisseur"/>
+						</f:content>
+					</f:SimpleForm>
+					
+					<VBox class="sapUiTinyMarginBegin customBorder customAlign" justifyContent="Center" alignContent="Center">
+						<Button press="onPress" text="Crop image" width="140px" visible="false"/>
+						<Button press="onPressCreate" icon="sap-icon://add" width="140px" class="sapUiSmallMarginTop"/>
+						<grid:CSSGrid
+							gridTemplateRows="1fr 1fr 1fr"
+							gridTemplateColumns="1fr 1fr 1fr"
+							gridGap="1rem"
+							items="{path : 'imageModel>/' }" >
+							<VBox class="sapUiLargeMarginTop">
+								<core:Icon src="sap-icon://sys-cancel" class="redIcon" press="onPressRemove"/>
+								<Image 
+									src="{imageModel>src}" 
+									press="onPress"
+									height="{imageModel>height}"
+									width="{imageModel>width}">
+								</Image>
+							</VBox>
+						</grid:CSSGrid>
+					</VBox>
+					
+					<PDFViewer id="pdfViewer" title="Test" height="200px">
+						<layoutData>
+							<FlexItemData growFactor="1" />
+						</layoutData>
+					</PDFViewer>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button 
+								id="cancel"
+								text="{i18n>scanBlButton1}"
+								tooltip="{i18n>scanBlButton1}"
+								type="Reject"
+								press="onPressAnnuler" />
+							<Button 
+								id="finish"
+								text="{i18n>scanBlButton2}" 
+								tooltip="{i18n>scanBlButton2}" 
+								type="Accept"
+								press="onPressTerminer" />
+							<Button 
+								id="pdf"
+								text="Create PDF" 
+								tooltip="Create PDF" 
+								type="Emphasized"
+								press="onPressCreatePdf" />	
+						</contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

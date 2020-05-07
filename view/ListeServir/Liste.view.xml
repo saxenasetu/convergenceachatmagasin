@@ -1,0 +1,126 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" 
+	controllerName="com.eramet.Convergence_Achat_Magasin.controller.ListeServir.Liste" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://home" press="backToHome"/>
+							<Button icon="sap-icon://nav-back" press="onPressNavBack"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title id="title" text="liste" />
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<VBox class="toolbar">
+					<!-- The currentLocationText set manually by id, because it depens on the selected document -->
+					<Breadcrumbs id="breadcrumbs" separatorStyle="GreaterThan" class="sapUiSmallMargin">
+						<Link press="onPressNavBack" text="{i18n>home_Tile3_title}" tooltip="{i18n>home_Tile3_title}"/>
+					</Breadcrumbs>
+				</VBox>
+				<content>
+					<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4"
+						labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" >
+						<f:content>
+							<Label text="{i18n>listeText1}"></Label>
+							<Input id="demandeur" />
+							
+							<Label text="{i18n>listeText2}"></Label>
+							<Input id="service" />
+							
+							<Label text="{i18n>listeText3}"></Label>
+							<Input id="date" />
+						</f:content>
+					</f:SimpleForm>
+					
+					<List
+						id="listList"
+						items="{path: 'listModel>/'}">
+						<items>
+							<CustomListItem
+								type="Active"
+								press="onEnableItem"
+							>
+								<VBox class="sapUiSmallMargin">
+									<HBox>
+										<VBox width="50%">
+											<Title  text="Code article: {path: 'listModel>MaterialCode'}" class="sapUiTinyMarginTop"/>
+										</VBox>
+										<VBox width="25%">
+											<Label  text="{path: 'listModel>Emplacement'}" class="sapUiTinyMarginTop sapUiLargeMarginBegin"/>
+										</VBox>
+										<VBox width="25%">
+											<Label  text="{path: 'listModel>BaseUnit'}" class="sapUiTinyMarginTop sapUiLargeMarginBegin"/>
+										</VBox>
+									</HBox>
+									<HBox>
+	
+										<VBox width="50%">
+											<Label  text="Division: {path: 'listModel>Plant'}" class="sapUiTinyMarginTop"/>
+											<Label  text="Magasin: {path: 'listModel>Magasin'}" class="sapUiTinyMarginTop"/>
+										</VBox>
+										<VBox width="50%">
+											
+										</VBox>
+									
+									</HBox>
+									<HBox>
+										<VBox width="50%">
+											<Label width="100%" text="Désignation: {path: 'listModel>MaterialDesc'}" class="sapUiTinyMarginTop longText"/>
+										</VBox>
+										<VBox width="50%">
+												<Label text="{i18n>listeText4}: {path: 'listModel>ActualDeliveredQtyInBaseUnit'}" class="sapUiTinyMarginTop sapUiLargeMarginBegin"/>
+										</VBox>
+										
+									</HBox>
+									
+									<HBox>
+										<VBox width="50%">
+											<Label width="100%" text="{path: 'listModel>DeliveryDocumentItemCategory'}" class="sapUiTinyMarginTop"/>
+										</VBox>
+										
+										<VBox width="50%">
+											<Label text="{i18n>listeText5}: {path: 'listModel>quantity'}" class="sapUiTinyMarginTop sapUiLargeMarginBegin"/>
+										</VBox>
+									</HBox>
+									
+								
+									
+									<HBox>
+										<Button icon="sap-icon://less" press="onPressDec" enabled="{path: 'listModel>removeEnabled'}" class="stepButton sapUiSmallMarginBegin redButton blackText"/>
+										<Input value ="{path: 'listModel>quantity'}" type="Number" class="stepInput customInputText" liveChange="onCheckValue"/>
+										<Button icon="sap-icon://add" press="onPressInc" enabled="{path: 'listModel>addEnabled'}" class="stepButton greenButton blackText"/>
+									</HBox>
+									
+									
+								</VBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<!--<Button 
+								id="confirmer"
+								text="{i18n>listeButton1}"
+								tooltip="{i18n>listeButton1}"
+								type="Ghost"
+								press="onPressConfirmer" />-->
+							<Button 
+								id="enregister"
+								text="{i18n>listeButton1}"
+								tooltip="{i18n>listeButton1}" 
+								type="Ghost"
+								enabled="false"
+								press="onPressEnregister" />
+						</contentRight>
+					</Bar>	
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

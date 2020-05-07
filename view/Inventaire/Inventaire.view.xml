@@ -1,0 +1,38 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.Convergence_Achat_Magasin.controller.Inventaire.Inventaire" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://home" press="backToHome"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="{i18n>inventaireTitle}" />
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<List
+						id="documentList"
+						items="{path: 'listDocModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="Inventaire N° {path: 'listDocModel>PhysicalInventoryDocument'}" 
+								type="Navigation" 
+								press="onPressNavToDoc">
+								<attributes>
+									<ObjectAttribute text="Année comptable du document: {path: 'listDocModel>FiscalYear'}" />
+									<ObjectAttribute text="Division: {path: 'listDocModel>Plant'}" />
+									<ObjectAttribute text="Magasin: {path: 'listDocModel>StorageLocation'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

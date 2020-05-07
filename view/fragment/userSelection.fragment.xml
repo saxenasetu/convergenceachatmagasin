@@ -1,0 +1,24 @@
+<c:FragmentDefinition controllerName="com.eramet.Convergence_Achat_Magasin.controller.Home"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:u="sap.ui.unified">
+	<Dialog id="userSelectionDialog" title="{i18n>userSelectionTitle}">
+		<content>
+			<VBox justifyContent="Center" alignItems="Center">	
+				<GenericTile id="magasinier" header="{i18n>userSelectionType1}" press="onSelectCustomer" class="sapUiSmallMargin green">
+					<TileContent>
+						<ImageContent src="sap-icon://sys-help"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile id="depanneur" header="{i18n>userSelectionType2}" press="onSelectCustomer" class="sapUiSmallMargin purple">
+					<TileContent>
+						<ImageContent src="sap-icon://wrench"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile id="technicien" header="{i18n>userSelectionType3}" press="onSelectCustomer" class="sapUiSmallMargin blue">
+					<TileContent>
+						<ImageContent src="sap-icon://timesheet"/>
+					</TileContent>
+				</GenericTile>
+			</VBox>
+		</content>
+	</Dialog>
+</c:FragmentDefinition>

@@ -1,0 +1,1 @@
+jQuery.sap.declare("com.eramet.Convergence_Achat_Magasin.util.constans");com.eramet.Convergence_Achat_Magasin.util.constans={aListDoc:[],aDetailDoc:[],aDoc:[],aListServir:[],aList:[],aPurchaseList:[]};

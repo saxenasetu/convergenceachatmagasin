@@ -1,0 +1,1 @@
+jQuery.sap.declare("com.eramet.Convergence_Achat_Magasin.util.formatter");com.eramet.Convergence_Achat_Magasin.util.formatter={};

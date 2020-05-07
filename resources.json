@@ -1,0 +1,178 @@
+{
+    "resources": [
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "controller/ScanBl/ScanBl.controller.js"
+        },
+        {
+            "name": "controller/RechercheArticle/RechercheArticle.controller.js"
+        },
+        {
+            "name": "controller/ListeServir/ListeServir.controller.js"
+        },
+        {
+            "name": "controller/ListeServir/Liste.controller.js"
+        },
+        {
+            "name": "controller/Inventaire/Inventaire.controller.js"
+        },
+        {
+            "name": "controller/Inventaire/DetailsDoc.controller.js"
+        },
+        {
+            "name": "util/formatter.js"
+        },
+        {
+            "name": "util/constans.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "ext/jspdf.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "controller/ScanBl/ScanBl-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/RechercheArticle/RechercheArticle-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ListeServir/ListeServir-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ListeServir/Liste-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Inventaire/Inventaire-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Inventaire/DetailsDoc-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "util/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "util/constans-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "ext/jspdf-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/fragment/userSelection.fragment.xml"
+        },
+        {
+            "name": "view/fragment/ajoutDePoste.fragment.xml"
+        },
+        {
+            "name": "view/ScanBl/ScanBl.view.xml"
+        },
+        {
+            "name": "view/RechercheArticle/RechercheArticle.view.xml"
+        },
+        {
+            "name": "view/ListeServir/ListeServir.view.xml"
+        },
+        {
+            "name": "view/ListeServir/Liste.view.xml"
+        },
+        {
+            "name": "view/Inventaire/Inventaire.view.xml"
+        },
+        {
+            "name": "view/Inventaire/DetailsDoc.view.xml"
+        },
+        {
+            "name": "localService/ZI_INV_ARTICLEDETAIL_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/MM_IM_PHYS_INV_DOC_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/EAM_OBJPG_PURCHORDER_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/API_PURCHASEORDER_PROCESS_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/API_PHYSICAL_INVENTORY_DOC_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/API_OUTBOUND_DELIVERY_SRV/metadata.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "fioriHtmlRunner.html"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        }
+    ]
+}

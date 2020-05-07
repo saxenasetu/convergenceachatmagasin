@@ -1,0 +1,53 @@
+<mvc:View controllerName="com.eramet.Convergence_Achat_Magasin.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<customHeader>
+						<Bar>
+							<contentLeft/>
+							<contentMiddle>
+								<Title text="{i18n>title}"></Title>
+							</contentMiddle>
+							<contentRight>
+								<Button id="user" icon="sap-icon://customer" type="Transparent" press="onOpenUserSelection" />
+							</contentRight>
+						</Bar>	
+					</customHeader>
+					<content>
+						<GenericTile id="inventory" header="{i18n>home_Tile1_title}" press="onPressNavToInventaire" class="sapUiSmallMargin tileLayout">
+							<TileContent>
+								<NumericContent value="{path: 'listDocModel>/length'}" valueColor="Critical" icon="sap-icon://inventory" withMargin="false"/>
+							</TileContent>
+						</GenericTile>
+						
+						<GenericTile header="{i18n>home_Tile2_title}" press="onPressNavToScanBl" class="sapUiSmallMargin tileLayout">
+							<TileContent>
+								<ImageContent src="sap-icon://bar-code"/>
+							</TileContent>
+						</GenericTile>
+						
+						<GenericTile id="picking" header="{i18n>home_Tile3_title}" press="onPressNavToListeServir" class="sapUiSmallMargin tileLayout">
+						  <TileContent>
+						      <content>
+						         <VBox>
+				            		<NumericContent value="0" valueColor="Critical" icon="sap-icon://documents" withMargin="false"/>
+				            		<NumericContent value="0" valueColor="Good" icon="sap-icon://multi-select" withMargin="false" class="secondNumber alignedNumericContent"/>
+				            		
+						         </VBox>
+						      </content>
+						   </TileContent>
+						</GenericTile>
+						
+						<GenericTile header="{i18n>home_Tile4_title}" press="onPressNavToRechercheArticle" class="sapUiSmallMargin tileLayout">
+							<TileContent>
+								<ImageContent src="sap-icon://search"/>
+							</TileContent>
+						</GenericTile>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

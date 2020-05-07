@@ -1,0 +1,36 @@
+<c:FragmentDefinition controllerName="com.eramet.Convergence_Achat_Magasin.controller.Inventaire.DetailsDoc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m"
+	xmlns:c="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="ajoutDePoste" contentWidth="auto" stretch="true">
+		<customHeader>
+	    	<Bar>
+        		<contentLeft>
+        			<Button icon="sap-icon://nav-back" press="_closePopup"/>
+        		</contentLeft>
+    			<contentMiddle><Title text="{i18n>ajoutDePosteTitle}"/></contentMiddle>
+        		<contentRight></contentRight>
+    		</Bar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" id="newEntitySimpleForm"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+				<f:content>
+					<Label labelFor="codeArt" text="{i18n>ajoutDePosteText1}" />
+					<Input id="codeArt" enabled="false"></Input>
+	
+					<Label labelFor="designation" text="{i18n>ajoutDePosteText2}" />
+					<Input id="designation" enabled="false"></Input>
+				
+					<Label labelFor="emplacement" text="{i18n>ajoutDePosteText3}" />
+					<Input id="emplacement" liveChange="onCheckEmplacement"></Input>					
+					
+					<Label labelFor="quantity" text="{i18n>ajoutDePosteText4}" />
+					<Input id="quantity" type="Number"></Input>					
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<buttons>
+			<Button text="{i18n>ajoutDePosteButton1}" tooltip="{i18n>ajoutDePosteButton1}" press="onPressClose" type="Ghost"></Button>	
+		</buttons>
+	</Dialog>
+</c:FragmentDefinition>

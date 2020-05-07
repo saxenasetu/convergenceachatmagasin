@@ -1,0 +1,51 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.Convergence_Achat_Magasin.controller.ListeServir.ListeServir" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://home" press="backToHome"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title id="title" text="{i18n>listeServirTitle}" />
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<SearchField
+						id="servirSearch"
+						enableSuggestions="true"
+						search="onSearch"
+						width="90%"
+						class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
+						suggest="onSuggest"
+						suggestionItems="{ path: 'listServirModel>/'}">
+						<suggestionItems>
+							<SuggestionItem 
+								text="{path: 'listServirModel>DeliveryDocument'}"
+								key="{path: 'listServirModel>DeliveryDocument'}"/>
+						</suggestionItems>
+					</SearchField>
+					<List
+						id="serviceList"
+						items="{path: 'listServirModel>/'}">
+						<items>
+							<ObjectListItem 
+								title="Livraison sortante N° {path: 'listServirModel>DeliveryDocument'}" 
+								type="Navigation" 
+								press="onPressNavToList">
+								<attributes>
+									<ObjectAttribute class="customWidth" text="Demandeur: {path: 'listServirModel>CreatedByUser'}" />
+									<ObjectAttribute text="{path: 'listServirModel>DeliveryDocumentType'}" />
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

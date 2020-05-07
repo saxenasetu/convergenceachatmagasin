@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.eramet.Convergence_Achat_Magasin.controller.RechercheArticle.RechercheArticle" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentLeft>
+							<Button icon="sap-icon://home" press="backToHome"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="{i18n>home_Tile4_title}" />
+						</contentMiddle>
+						<contentRight></contentRight>
+					</Bar>
+				</customHeader>
+				<content></content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,111 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='E4D')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='E4D')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='E4D')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='E4D')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='E4D')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="API_PHYSICAL_INVENTORY_DOC_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="A_PhysInventoryDocHeaderType" sap:label="API Physical Inventory Document Header" sap:content-version="1">
+				<Key><PropertyRef Name="FiscalYear"/><PropertyRef Name="PhysicalInventoryDocument"/></Key><Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="PhysicalInventoryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Physical Inventory Document"/><Property Name="InventoryTransactionType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+					sap:label="Inventory Transaction Type"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage location"/><Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Special Stock"
+					sap:quickinfo="Special Stock Indicator"/><Property Name="DocumentDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date"
+					sap:quickinfo="Document Date in Document"/><Property Name="PhysInventoryPlannedCountDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Planned Count Date"
+					sap:quickinfo="Planned Date of Inventory Count"/><Property Name="PhysicalInventoryLastCountDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Count Date"
+					sap:quickinfo="Date of Last Count"/><Property Name="PostingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting Date"
+					sap:quickinfo="Posting Date in the Document"/><Property Name="FiscalPeriod" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Posting Period"/><Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"
+					sap:quickinfo="Physical Inventory Created by User"/><Property Name="PostingIsBlockedForPhysInvtry" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Posting Block"
+					sap:quickinfo="Posting Block Due to Physical Inventory"/><Property Name="PhysicalInventoryCountStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Count Status"/><Property Name="PhysInvtryAdjustmentPostingSts" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Adjustment Status"
+					sap:quickinfo="Status of Adjustment Posting (Inventory Differences)"/><Property Name="PhysInvtryDeletionStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Deletion Status"
+					sap:quickinfo="Status of Deletion"/><Property Name="PhysInvtryDocHasQtySnapshot" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Book Inventory Freeze"/><Property Name="PhysicalInventoryGroupType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Grouping Type"
+					sap:quickinfo="Type of Grouping Criterion"/><Property Name="PhysicalInventoryGroup" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Grouping Criterion"
+					sap:quickinfo="Grouping Criterion of Physical Inventory Document Item"/><Property Name="PhysicalInventoryNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"
+					sap:label="Physical Inventory Number"/><Property Name="PhysInventoryReferenceNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"
+					sap:label="Physical Inventory Reference"/><Property Name="PhysicalInventoryDocumentDesc" Type="Edm.String" MaxLength="40" sap:label="Description"
+					sap:quickinfo="Description of Physical Inventory Document"/><Property Name="PhysicalInventoryType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Physical Inventory Type"/><Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" ConcurrencyMode="Fixed" sap:label="Last Change"
+					sap:quickinfo="Last Change Timestamp"/><NavigationProperty Name="to_PhysicalInventoryDocumentItem"
+					Relationship="API_PHYSICAL_INVENTORY_DOC_SRV.assoc_E86D8C259027853B151C6C9975101EEA"
+					FromRole="FromRole_assoc_E86D8C259027853B151C6C9975101EEA" ToRole="ToRole_assoc_E86D8C259027853B151C6C9975101EEA"/></EntityType>
+			<EntityType Name="A_PhysInventoryDocItemType" sap:label="API Physical Inventory Document Item" sap:content-version="1">
+				<Key><PropertyRef Name="FiscalYear"/><PropertyRef Name="PhysicalInventoryDocument"/><PropertyRef Name="PhysicalInventoryDocumentItem"/></Key><Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="PhysicalInventoryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Physical Inventory Document"/><Property Name="PhysicalInventoryDocumentItem" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:label="Physical Inventory Document Item" sap:quickinfo="Physical Inventory Item Number"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/><Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage location"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"
+					sap:quickinfo="Material Number"/><Property Name="Batch" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Batch" sap:quickinfo="Batch Number"/><Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Special Stock Type"/><Property Name="PhysicalInventoryStockType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Stock Type"
+					sap:quickinfo="Stock Type (Physical Inventory)"/><Property Name="SalesOrder" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sales Order"
+					sap:quickinfo="Sales Order Number"/><Property Name="SalesOrderItem" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Sales Order Item"
+					sap:quickinfo="Item Number in Sales Order"/><Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Vendor"
+					sap:quickinfo="Vendor's account number"/><Property Name="Customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer"
+					sap:quickinfo="Account number of customer"/><Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="WBS element"
+					sap:quickinfo="Work Breakdown Structure Element (WBS Element)"/><Property Name="LastChangeUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By"/><Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On"
+					sap:quickinfo="Date of Last Change"/><Property Name="CountedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Counted By"/><Property Name="PhysicalInventoryLastCountDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Count Date"
+					sap:quickinfo="Date of Last Count"/><Property Name="AdjustmentPostingMadeByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase"
+					sap:label="Adjustment Posting Made By"/><Property Name="PostingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Posting Date"
+					sap:quickinfo="Posting Date in the Document"/><Property Name="PhysicalInventoryItemIsCounted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Counted"
+					sap:quickinfo="Item is Counted"/><Property Name="PhysInvtryDifferenceIsPosted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Difference Posted"
+					sap:quickinfo="Difference of Item is Posted"/><Property Name="PhysInvtryItemIsRecounted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Recounted"
+					sap:quickinfo="Item is Recounted"/><Property Name="PhysInvtryItemIsDeleted" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Deleted"
+					sap:quickinfo="Item is Deleted"/><Property Name="IsHandledInAltvUnitOfMsr" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Without Unit of Measure Proposal"/><Property Name="CycleCountType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Cycle Count Type"/><Property Name="IsValueOnlyMaterial" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Value-Only Material"/><Property Name="PhysInventoryReferenceNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase"
+					sap:label="Physical Inventory Reference"/><Property Name="MaterialDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Material Document"
+					sap:quickinfo="Number of Material Document"/><Property Name="MaterialDocumentYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Material Document Year"/><Property Name="MaterialDocumentItem" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Material Document Item"/><Property Name="PhysInvtryRecountDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Recount Document"
+					sap:quickinfo="Number of Recount Document"/><Property Name="PhysicalInventoryItemIsZero" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Is Zero Count"/><Property Name="ReasonForPhysInvtryDifference" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative"
+					sap:label="Difference Reason"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/><Property Name="BookQtyBfrCountInMatlBaseUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialBaseUnit"
+					sap:label="Book Quantity" sap:quickinfo="Book Quantity Immediately Prior to Count"/><Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="MaterialBaseUnit" sap:label="Counted Quantity"/><Property Name="UnitOfEntry" Type="Edm.String" MaxLength="3" sap:label="Entry Unit" sap:semantics="unit-of-measure"/><Property Name="QuantityInUnitOfEntry" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="UnitOfEntry"
+					sap:label="Counted Quantity in Entry Unit"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Company Code Currency" sap:semantics="currency-code"/><Property Name="DifferenceAmountInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="Currency" sap:label="Difference Value"
+					sap:quickinfo="Value of Difference"/><Property Name="EnteredSlsAmtInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="Currency"
+					sap:label="Sales Price Counted Value" sap:quickinfo="Externally Entered Value Based on Sales Price"/><Property Name="SlsPriceAmountInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="Currency"
+					sap:label="Sales Price Book Value"/><Property Name="PhysInvtryCtAmtInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="Currency"
+					sap:label="Counted Quantity Value"/><Property Name="BookQtyAmountInCoCodeCrcy" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="Currency" sap:label="Book Value"/><Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" ConcurrencyMode="Fixed" sap:label="Last Change"
+					sap:quickinfo="Last Change Timestamp"/><NavigationProperty Name="to_PhysicalInventoryDocument" Relationship="API_PHYSICAL_INVENTORY_DOC_SRV.assoc_E86D8C259027853B151C6C9975101EEA"
+					FromRole="ToRole_assoc_E86D8C259027853B151C6C9975101EEA" ToRole="FromRole_assoc_E86D8C259027853B151C6C9975101EEA"/></EntityType>
+			<Association Name="assoc_E86D8C259027853B151C6C9975101EEA" sap:content-version="1">
+				<End Type="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType" Multiplicity="1"
+					Role="FromRole_assoc_E86D8C259027853B151C6C9975101EEA"><OnDelete Action="Cascade"/></End><End Type="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType" Multiplicity="*" Role="ToRole_assoc_E86D8C259027853B151C6C9975101EEA"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_E86D8C259027853B151C6C9975101EEA"><PropertyRef Name="FiscalYear"/><PropertyRef Name="PhysicalInventoryDocument"/></Principal>
+					<Dependent Role="ToRole_assoc_E86D8C259027853B151C6C9975101EEA"><PropertyRef Name="FiscalYear"/><PropertyRef Name="PhysicalInventoryDocument"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="API_PHYSICAL_INVENTORY_DOC_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="A_PhysInventoryDocHeader" EntityType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="A_PhysInventoryDocItem" EntityType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType" sap:creatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_E86D8C259027853B151C6C9975101EEA"
+					Association="API_PHYSICAL_INVENTORY_DOC_SRV.assoc_E86D8C259027853B151C6C9975101EEA" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="A_PhysInventoryDocHeader" Role="FromRole_assoc_E86D8C259027853B151C6C9975101EEA"/><End EntitySet="A_PhysInventoryDocItem" Role="ToRole_assoc_E86D8C259027853B151C6C9975101EEA"/></AssociationSet>
+				<FunctionImport Name="PostDifferences" ReturnType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+					EntitySet="A_PhysInventoryDocHeader" m:HttpMethod="POST" sap:label="Post Differences"
+					sap:action-for="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"><Parameter Name="PostingThresholdValue" Type="Edm.Decimal" Mode="In" Precision="14" Scale="3" Nullable="true"/><Parameter Name="PostingDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/><Parameter Name="PhysicalInventoryDocument" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="FiscalYear" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+				<FunctionImport Name="PostDifferencesOnItem" ReturnType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+					EntitySet="A_PhysInventoryDocItem" m:HttpMethod="POST" sap:label="Post Difference on Item"
+					sap:action-for="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"><Parameter Name="PhysicalInventoryDocumentItem" Type="Edm.String" Mode="In" MaxLength="3"/><Parameter Name="Material" Type="Edm.String" Mode="In" MaxLength="40"/><Parameter Name="PhysicalInventoryDocument" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="FiscalYear" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="Batch" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/><Parameter Name="ReasonForPhysInvtryDifference" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true"/><Parameter Name="PostingDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="InitiateRecount" ReturnType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+					EntitySet="A_PhysInventoryDocHeader" m:HttpMethod="POST" sap:label="Trigger Recount"
+					sap:action-for="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"><Parameter Name="PhysicalInventoryDocument" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="FiscalYear" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="PhysInventoryPlannedCountDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/><Parameter Name="DocumentDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/><Parameter Name="PhysicalInventoryNumber" Type="Edm.String" Mode="In" MaxLength="16" Nullable="true"/><Parameter Name="PhysInventoryReferenceNumber" Type="Edm.String" Mode="In" MaxLength="16" Nullable="true"/><Parameter Name="PhysicalInventoryDocumentDesc" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/><Parameter Name="PostingThresholdValue" Type="Edm.Decimal" Mode="In" Precision="14" Scale="3" Nullable="true"/><Parameter Name="PhysInvtryDocHasQtySnapshot" Type="Edm.Boolean" Mode="In" Nullable="true"/><Parameter Name="PostingIsBlockedForPhysInvtry" Type="Edm.Boolean" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="InitiateRecountOnItem" ReturnType="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+					EntitySet="A_PhysInventoryDocItem" m:HttpMethod="POST" sap:label="Trigger Recount on Item"
+					sap:action-for="API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"><Parameter Name="PhysicalInventoryDocument" Type="Edm.String" Mode="In" MaxLength="10"/><Parameter Name="FiscalYear" Type="Edm.String" Mode="In" MaxLength="4"/><Parameter Name="PhysicalInventoryDocumentItem" Type="Edm.String" Mode="In" MaxLength="3"/><Parameter Name="PhysInventoryPlannedCountDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/><Parameter Name="DocumentDate" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true"/><Parameter Name="PhysicalInventoryNumber" Type="Edm.String" Mode="In" MaxLength="16" Nullable="true"/><Parameter Name="PhysInventoryReferenceNumber" Type="Edm.String" Mode="In" MaxLength="16" Nullable="true"/><Parameter Name="PhysicalInventoryDocumentDesc" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/><Parameter Name="PhysInvtryDocHasQtySnapshot" Type="Edm.Boolean" Mode="In" Nullable="true"/><Parameter Name="PostingIsBlockedForPhysInvtry" Type="Edm.Boolean" Mode="In" Nullable="true"/></FunctionImport>
+			</EntityContainer>
+			<Annotations Target="API_PHYSICAL_INVENTORY_DOC_SRV.API_PHYSICAL_INVENTORY_DOC_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations><atom:link rel="self" href="./sap/API_PHYSICAL_INVENTORY_DOC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="./sap/API_PHYSICAL_INVENTORY_DOC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

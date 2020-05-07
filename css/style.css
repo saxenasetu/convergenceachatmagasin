@@ -1,0 +1,116 @@
+/* Background color for the Dépanner tile in the customer selector popup */
+.purple {
+	background: rgb(203, 174, 230) !important;
+} 
+
+/* Background color for the Technicien de maintenance tile in the customer selector popup */
+.blue {
+	background: rgb(194, 223, 232) !important;
+}
+
+/* Background color for the Rondier tile in the customer selector popup */
+.green {
+	background: rgb(155, 226, 155) !important;
+}
+
+/* Align the icons to left in the Home.view */
+.tileLayout {
+	float: left;
+}
+
+/* Secondary number in the tile */
+.secondNumber {
+	padding-left: 10px !important;
+}
+
+.alignedNumericContent{
+	top: -20px;
+	padding-left: 0px !important;
+}
+
+/* Overwrite the width of the tiles in the Home.view */
+.sapMTileSmallPhone .sapMNC {
+    height: 3.438rem;
+    width: 4.5rem;
+}
+
+/* This is a custom css for the input fields (between the +- buttons) in the DetailsDoc.view */
+.stepInput {
+    color: rgb(50,54,58);
+    text-align: center !important;
+}
+
+/* Custom bigger input text in the Liste.view */
+.customInputText .sapMInputBaseInner{
+	color: rgb(50,54,58);
+    text-align: inherit;
+    font-size: x-large;
+}
+
+/* Custom bigger and green input text in the Liste.view */
+.customInputTextGreen .sapMInputBaseInner{
+	color: rgb(255, 255, 255);
+    text-align: inherit;
+    font-size: x-large;
+    background-color: rgb(76, 175, 80);
+}
+
+/* Red remove icon for the ScanBl.view */
+.redIcon {
+	color: red;
+	padding-left: 70px;
+}
+
+/* Border for the image container in the ScanBl.view */
+.customBorder {
+	height: auto;
+    width: 95% !important;
+    border: 2px dashed grey;
+}
+
+/* Align the elements to center in the flexboxes */
+.customAlign .sapMFlexItemAlignAuto {
+    -webkit-align-self: auto;
+    align-self: center;
+}
+
+/* This is a custom css for the buttons (+- buttons) in the Liste.view */
+.stepButton {
+	width: 6rem;
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    height: 2rem;
+}
+
+/* Custom red button in the Liste.view */
+.redButton >span.sapMBtnInner{
+    background-image: none;
+    background-color: rgb(254, 81, 81);
+    border: 0.0625rem solid rgb(172, 177, 183);
+    border-color: rgb(16, 126, 62);
+    color: rgb(0, 0, 0);
+}
+
+/* Custom green button in the Liste.view */
+.greenButton >span.sapMBtnInner{
+    background-image: none;
+    background-color: rgb(76, 175, 80);
+    border: 0.0625rem solid rgb(172, 177, 183);
+    border-color: rgb(16, 126, 62);
+    color: rgb(0, 0, 0);
+}
+
+/* Custom button text color in the Liste */
+.blackText .sapUiIcon::before {
+    content: attr(data-sap-ui-icon-content);
+    speak: none;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    color: black;
+    font-size: x-large;
+} 
+
+/*To prevent long text truncation*/
+.longText{
+	white-space: unset !important;
+}
